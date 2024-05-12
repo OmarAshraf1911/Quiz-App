@@ -24,7 +24,7 @@ function getQuestion() {
       // Add Question Data
       addQuestionData(questionsObject[currentIndex], qCount);
       // Start timer
-      countdown(1, qCount);
+      countdown(15, qCount);
       // Click on submit
       submitButton.onclick = () => {
         let theRightAnswer = questionsObject[currentIndex].right_answer;
@@ -35,7 +35,7 @@ function getQuestion() {
         addQuestionData(questionsObject[currentIndex], qCount);
         handleBullets();
         clearInterval(countdownInterval);
-        countdown(1, qCount);
+        countdown(15, qCount);
         showResults(qCount);
       };
     }
@@ -63,7 +63,7 @@ function addQuestionData(obj, count) {
     let questionText = document.createTextNode(obj["title"]);
     questionTitle.appendChild(questionText);
     quizArea.appendChild(questionTitle);
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 3; i++) {
       let mainDev = document.createElement("div");
       mainDev.className = "answer";
       let radioInput = document.createElement("input");
