@@ -131,3 +131,12 @@ body {
 .quiz-app .results span.perfect {
   color: #0075ff;
 }
+
+.quiz-area img {
+  height: 200px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}

@@ -24,7 +24,7 @@ function getQuestion() {
       // Add Question Data
       addQuestionData(questionsObject[currentIndex], qCount);
       // Start timer
-      countdown(3, qCount);
+      countdown(1, qCount);
       // Click on submit
       submitButton.onclick = () => {
         let theRightAnswer = questionsObject[currentIndex].right_answer;
@@ -35,7 +35,7 @@ function getQuestion() {
         addQuestionData(questionsObject[currentIndex], qCount);
         handleBullets();
         clearInterval(countdownInterval);
-        countdown(3, qCount);
+        countdown(1, qCount);
         showResults(qCount);
       };
     }
@@ -58,7 +58,8 @@ function createBullets(num) {
 
 function addQuestionData(obj, count) {
   if (currentIndex < count) {
-    let questionTitle = document.createElement("h2");
+    let questionTitle = document.createElement("img");
+    questionTitle.src = obj["title"];
     let questionText = document.createTextNode(obj["title"]);
     questionTitle.appendChild(questionText);
     quizArea.appendChild(questionTitle);
